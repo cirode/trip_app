@@ -33,9 +33,9 @@ end
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
-  gem 'rspec'
+  gem 'rspec-rails'
   gem 'shoulda'
-  gem 'machinist'
+  gem 'machinist', '>= 2.0.0.beta1'
   gem 'cucumber-rails'
   gem 'launchy'
   gem 'capybara-webkit'
