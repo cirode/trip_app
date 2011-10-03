@@ -2,4 +2,7 @@
   Welcome
 
 %p
-  = link_to I18n.t(:log_in_prompt), new_user_session_path
+  - unless user_signed_in?
+    = link_to( I18n.t(:sign_in_prompt), new_user_session_path)
+  - else
+    = link_to( I18n.t(:sign_out_prompt), destroy_user_session_path, :method => :delete)

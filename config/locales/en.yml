@@ -2,5 +2,5 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  log_in_prompt: "log in"
-  log_out_prompt: "log out"
+  sign_in_prompt: "sign in"
+  sign_out_prompt: "sign out"
