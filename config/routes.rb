@@ -1,6 +1,8 @@
 TripApp::Application.routes.draw do
   resource :user_session
   resources :user_sessions
+  
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

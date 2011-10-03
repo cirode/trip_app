@@ -1,0 +1,17 @@
+%h1
+  = t('.heading')
+
+= semantic_form_for @user do |f|
+  = f.inputs do
+    = f.label :email
+    = f.semantic_errors :email
+    = f.text_field :email, :required => true
+    = f.label :password
+    = f.semantic_errors :password
+    = f.password_field :password, :required => true
+    = f.label :password_confirmation
+    = f.semantic_errors :password_confirmation
+    = f.password_field :password_confirmation, :required => true
+    
+  = f.buttons do
+    = f.submit t('.submit_button')

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   #from auth_logic expample application
   #https://github.com/binarylogic/authlogic_example/
   
-  helper_method :current_user, :signed_in?
+  helper_method :signed_in?
   
   def current_user_session
     return @current_user_session if defined?(@current_user_session)

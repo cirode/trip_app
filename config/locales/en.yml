@@ -6,10 +6,14 @@ en:
     new:
       submit_button: "Sign in"
       heading: "Sign in"
+      sign_up_link: "Sign up"
   welcome:
     index:
       sign_in_link: "Sign in"
       sign_out_link: "Sign out"
+  users:
+    new:
+      submit_button: "Sign up"
 
   activerecord:
     errors:
