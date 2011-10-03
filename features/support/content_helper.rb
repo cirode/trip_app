@@ -6,7 +6,7 @@ module ContentHelper
     when /the sign out prompt/
        "Sign out"
     when /the invalid sign in message/
-      "Invalid email or password."
+      "Invalid Email/Password combination."
     when /the sign up link/
       "Sign up"
     else

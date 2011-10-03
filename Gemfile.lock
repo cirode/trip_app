@@ -74,6 +74,8 @@ GEM
     execjs (1.2.9)
       multi_json (~> 1.0)
     ffi (1.0.9)
+    formtastic (2.0.1)
+      rails (~> 3.0)
     gherkin (2.5.1)
       json (>= 1.4.6)
     haml (3.1.3)
@@ -192,6 +194,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.0)
   cucumber-rails
   database_cleaner
+  formtastic
   haml
   jquery-rails
   launchy

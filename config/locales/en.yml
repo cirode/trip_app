@@ -2,5 +2,16 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  sign_in_prompt: "Sign in"
-  sign_out_prompt: "Sign out"
+  user_sessions:
+    new:
+      submit_button: "Sign in"
+      heading: "Sign in"
+  welcome:
+    index:
+      sign_in_link: "Sign in"
+      sign_out_link: "Sign out"
+
+  activerecord:
+    errors:
+      user_sessions:
+        record_invalid: "Invalid Email/Password combination."

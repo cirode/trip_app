@@ -8,8 +8,8 @@ module PageHelper
   
   def sign_in(user, password='password')
     visit path_to("sign in page")
-    fill_in 'user_email', :with => user.email
-    fill_in 'user_password', :with => password
+    fill_in 'user_session_email', :with => user.email
+    fill_in 'user_session_password', :with => password
     click_button "Sign in"
   end
 end
