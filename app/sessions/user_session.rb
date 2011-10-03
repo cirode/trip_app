@@ -6,7 +6,7 @@ class UserSession < Authlogic::Session::Base
   
   def valid?
     unless old_valid?
-      #errors.clear
+      errors.clear
       errors.add(:base, I18n.t('activerecord.errors.user_sessions.record_invalid'))
       return false
     end

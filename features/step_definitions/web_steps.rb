@@ -18,6 +18,10 @@ When(/^I follow (.+)$/) do |content_description|
   click_link get_content(content_description)
 end
 
+When(/^I press (.+)$/) do |content_description|
+  click_on get_content(content_description)
+end
+
 When(/^I should be on the (.+)$/) do |page_name|
   current_path.should == path_to(page_name)
 end

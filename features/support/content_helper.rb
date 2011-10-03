@@ -9,6 +9,10 @@ module ContentHelper
       "Invalid Email/Password combination."
     when /the sign up link/
       "Sign up"
+    when /the default authlogic message/
+      "You did not provide any details for authentication."
+    when /the sign in button/
+      "Sign in"
     else
       raise "Unknown content #{content_description}"
     end

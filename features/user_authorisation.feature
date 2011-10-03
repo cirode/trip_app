@@ -58,3 +58,18 @@ Scenario: A user who is denied sign in on email should remain on the sign in pag
   And I submit an incorrect email for the user
   Then I should see the invalid sign in message
   
+Scenario: A user should be able to sign out
+  Given a user exists
+  And I am signed in as the user
+  And I go to the root page
+  And I follow the sign out prompt
+  Then I should not be signed in
+  And I should be on the root page
+  
+Scenario: The default auth logic message should not appear when a user tries to log in without any data
+  Given a user exists
+  And I am signed out
+  And I am on the sign in page
+  And I press the sign in button
+  Then I should not see the default authlogic message
+  
