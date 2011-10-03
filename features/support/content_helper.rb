@@ -2,9 +2,11 @@ module ContentHelper
   def get_content content_description
     case content_description
     when /the sign in prompt/
-      I18n.t("sign_in_prompt")
+      "Sign in"
     when /the sign out prompt/
-       I18n.t("sign_out_prompt")
+       "Sign out"
+    when /the invalid sign in message/
+      "Invalid email or password."
     else
       raise "Unknown content #{content_description}"
     end

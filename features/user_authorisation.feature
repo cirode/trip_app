@@ -24,37 +24,37 @@ Scenario: A signed out user should be able to see the sign in page
   Then I should be on the sign in page
   
 Scenario: A user should be able to sign in with the appropriate password
-  Given a user with password exists
+  Given a user exists
   And I am signed out
-  And I am on the login page
-  And I submit the correct sign in details
+  And I am on the sign in page
+  And I submit the correct sign in details for the user
   Then I should be signed in
   
 Scenario: A user should not be able to sign in without the appropriate password
-  Given a user with password exists
+  Given a user exists
   And I am signed out
-  And I am on the login page
-  And I submit the incorrect password
+  And I am on the sign in page
+  And I submit an incorrect password for the user
   Then I should not be signed in
   
 Scenario: A user should not be able to sign in without the appropriate email
-  Given a user with password exists
+  Given a user exists
   And I am signed out
-  And I am on the sign page
-  And I submit an incorrect email
+  And I am on the sign in page
+  And I submit an incorrect email for the user
   Then I should not be signed in
   
 Scenario: A user who is denied sign in on password should remain on the sign in page and be given a meaningful error message
-  Given a user with password exists
-  And I am logged out
-  And I am on the login page
-  And I submit an incorrect password
-  Then I should see "Invalid username and password combination" in the form errors
-
-Scenario: A user who is denied sign in on email should remain on the sign in page and be given a meaningful error message
-  Given a user with password exists
+  Given a user exists
   And I am signed out
   And I am on the sign in page
-  And I submit an incorrect email
-  Then I should see "Invalid username and password combination" in the form errors
+  And I submit an incorrect password for the user
+  Then I should see the invalid sign in message
+
+Scenario: A user who is denied sign in on email should remain on the sign in page and be given a meaningful error message
+  Given a user exists
+  And I am signed out
+  And I am on the sign in page
+  And I submit an incorrect email for the user
+  Then I should see the invalid sign in message
   

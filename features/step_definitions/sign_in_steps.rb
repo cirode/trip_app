@@ -1,10 +1,3 @@
-def sign_out
-  visit path_to 'root page'
-  if page.has_content?('sign out')
-    click_link('sign out')
-  end
-end
-
 Given(/^I am signed out$/) do
   sign_out
 end
@@ -15,8 +8,29 @@ end
 
 When(/^I am signed in as #{capture_model}$/) do |model|
   user = model!(model)
-  visit path_to("sign in page")
-  fill_in 'user_email', :with => user.email
-  fill_in 'user_password', :with => 'password'
-  click_button "Sign in"
+  sign_in(user)
+end
+
+When(/^I submit the correct sign in details for #{capture_model}$/) do |model|
+  user = model!(model)
+  sign_in(user)
+end
+
+When(/^I submit an incorrect password for #{capture_model}$/) do |model|
+  user = model!(model)
+  sign_in(user, 'incorrect_password')
+end
+
+When(/^I submit an incorrect email for #{capture_model}$/) do |model|
+  user = model!(model)
+  user.email = 'incorrect_email'
+  sign_in(user)
+end
+
+Then(/^I should be signed in$/) do
+  page.should have_content(get_content('the sign out prompt'))
+end
+
+Then(/^I should not be signed in$/) do
+  page.should_not have_content(get_content('the sign out prompt'))
 end
