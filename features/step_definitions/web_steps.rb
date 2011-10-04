@@ -6,20 +6,20 @@ When(/^I am on the (.+)$/) do |page_name|
   visit path_to(page_name)
 end
 
-Then(/^I should see (.+)$/) do |content_description|
-  page.should have_content(get_content(content_description))
+Then(/^I should see "([^\"].+)"$/) do |content|
+  page.should have_content(content)
 end
 
-Then(/^I should not see (.+)$/) do |content_description|
-  page.should_not have_content(get_content(content_description))
+Then(/^I should not see "([^\"].+)"$/) do |content|
+  page.should_not have_content(content)
 end
 
-When(/^I follow (.+)$/) do |content_description|
-  click_link get_content(content_description)
+When(/^I follow "(.+)"$/) do |content|
+  click_link content
 end
 
-When(/^I press (.+)$/) do |content_description|
-  click_on get_content(content_description)
+When(/^I press "([^\"].+)"$/) do |content|
+  click_button content
 end
 
 When(/^I should be on the (.+)$/) do |page_name|

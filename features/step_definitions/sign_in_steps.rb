@@ -26,9 +26,44 @@ When(/^I submit an incorrect email for #{capture_model}$/) do |model|
 end
 
 Then(/^I should be signed in$/) do
-  page.should have_content(get_content('the sign out prompt'))
+  page.should have_content(the_sign_out_text)
 end
 
 Then(/^I should not be signed in$/) do
-  page.should_not have_content(get_content('the sign out prompt'))
+  page.should_not have_content(the_sign_out_text)
+end
+
+Then(/^I follow the sign up link$/) do
+  click_on the_sign_up_text
+end
+
+Then(/^I should see the sign in prompt$/) do
+  page.should have_content(the_sign_in_text)
+end
+
+Then(/^I should not see the sign in prompt$/) do
+  page.should_not have_content(the_sign_in_text)
+end
+Then(/^I should see the sign out prompt$/) do
+  page.should have_content(the_sign_out_text)
+end
+
+Then(/^I should not see the sign out prompt$/) do
+  page.should_not have_content(the_sign_out_text)
+end
+
+Then(/^I follow the sign in prompt$/) do
+  click_on the_sign_in_text
+end
+
+When(/^I follow the sign out prompt$/) do
+  click_on the_sign_out_text
+end
+
+When(/^I press the sign in button$/) do
+  click_button the_sign_in_text
+end
+
+Then(/^I should not see the default authlogic message$/) do
+  page.should_not have_content("You did not provide any details for authentication")
 end

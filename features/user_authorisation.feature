@@ -49,14 +49,14 @@ Scenario: A user who is denied sign in on password should remain on the sign in 
   And I am signed out
   And I am on the sign in page
   And I submit an incorrect password for the user
-  Then I should see the invalid sign in message
+  Then I should see "Invalid Email/Password combination."
 
 Scenario: A user who is denied sign in on email should remain on the sign in page and be given a meaningful error message
   Given a user exists
   And I am signed out
   And I am on the sign in page
   And I submit an incorrect email for the user
-  Then I should see the invalid sign in message
+  Then I should see "Invalid Email/Password combination."
   
 Scenario: A user should be able to sign out
   Given a user exists

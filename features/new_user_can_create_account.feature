@@ -18,17 +18,17 @@ Scenario Outline: Account is not created <with or without an> <data type>
   When I am on the sign up page
   And I submit the new user details <with or without an> <data type>
   Then I should not be signed in
-  And I should see the invalid <invalid data type> message
+  And I should see "<message>"
   
   Examples:
-  |with or without an|data type|invalid data type|
-  |without an|email|email|
-  |with an|invalid email|email|
-  |without a|password|password|
-  |without a|password_confirmation|password confirmation|
+  |with or without an|data type|message|
+  |without an|email|Email should look like an email address|
+  |with an|invalid email|Email should look like an email address|
+  |without a|password|Password is too short (minimum is 4 characters)|
+  |without a|password_confirmation|doesn't match confirmation|
 
 Scenario: Account is not created when password and password confirmation do not match
   When I am on the sign up page
   And I submit the new user details with a password that does not match the password confirmation
   Then I should not be signed in
-  And I should see the invalid password confirmation message
+  And I should see "Password doesn't match confirmation"
